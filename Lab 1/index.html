@@ -29,8 +29,104 @@
                 </div>
 
                 <div class="scroll-container">
-                    
+                    <table id="result-table">
+                        <tr class="table-header">
+                            <th class="coords-col">X</th>
+                            <th class="coords-col">Y</th>
+                            <th class="coords-col">R</th>
+                            <th class="time-col">Current time</th>
+                            <th class="time-col">Execution time</th>
+                            <th class="hitres-col">Hit result</th>
+                        </tr>
+                    </table>
                 </div>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="content-plate" id="values-plate">
+                <div class="plate-top">
+                    <h2 class="plate-top-title">Values</h2>
+                </div>
+
+                <form id="input-form" action="" method="POST">
+                    <table id="input-grid">
+                        <tr>
+                            <td class="input-grid-label">
+                                <label>X:</label>
+                            </td>
+                             <td class="input-grid-value x-radio-group">
+                                <div class="center-label">
+                                    <label class="xbox-label" for="x-radio1">-3</label>
+                                    <input class="x-radio" id="x-radio1" type="radio" name="xval" value="-3">
+                                </div>
+
+                                <div class="center-label">
+                                    <label class="xbox-label" for="x-radio2">-2</label>
+                                    <input class="x-radio" id="x-radio2" type="radio" name="xval" value="-2">
+                                </div>
+
+                                <div class="center-label">
+                                    <label class="xbox-label" for="x-radio3">-1</label>
+                                    <input class="x-radio" id="x-radio3" type="radio" name="xval" value="-1">
+                                </div>
+
+                                <div class="center-label">
+                                    <label class="xbox-label" for="x-radio4">0</label>
+                                    <input class="x-radio" id="x-radio4" type="radio" name="xval" value="0">
+                                </div>
+
+                                <div class="center-label">
+                                    <label class="xbox-label" for="x-radio5">1</label>
+                                    <input class="x-radio" id="x-radio5" type="radio" name="xval" value="1">
+                                </div>
+
+                                <div class="center-label">
+                                    <label class="xbox-label" for="x-radio6">2</label>
+                                    <input class="x-radio" id="x-radio6" type="radio" name="xval" value="2">
+                                </div>
+
+                                <div class="center-label">
+                                    <label class="xbox-label" for="x-radio7">3</label>
+                                    <input class="x-radio" id="x-radio7" type="radio" name="xval" value="3">
+                                </div>
+
+                                <div class="center-label">
+                                    <label class="xbox-label" for="x-radio8">4</label>
+                                    <input class="x-radio" id="x-radio8" type="radio" name="xval" value="4">
+                                </div>
+
+                                <div class="center-label">
+                                    <label class="xbox-label" for="x-radio9">5</label>
+                                    <input class="x-radio" id="x-radio9" type="radio" name="xval" value="5">
+                                </div>
+                             </td>
+                        </tr>
+
+                        <tr>
+                            <td class="input-grid-label">
+                                <label for="y-textinput">Y:</label>
+                            </td>
+
+                            <td class="input-grid-value">
+                                <input id="y-textinput" type="text" name="yval" maxlength="10" autocomplete="off" placeholder="Number from -5 to 5...">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td class="input-grid-label">
+                                <label>R:</label>
+                            </td>
+
+                            <td class="input-grid-value">
+                                <div class="center-label">
+                                    <label class="rbox-label" for="r-checkbox1">1</label>
+                                    <input class="r-checkbox" id="r-checkbox1" type="checkbox" name="rval" value="1">
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </form>
             </td>
         </tr>
     </table>
