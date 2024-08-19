@@ -49,7 +49,24 @@ $(function() {
         $.ajax({
             url: 'php/main.php',
             method: 'POST',
-            data: $
-        })
-    }
-})
+            data: $(this).serialize() + '&timezone=' + new Date().getTimezoneOffset(),
+            dataType: "json",
+            beforeSend: function() {
+                $('.button').attr('disabled', 'disabled');
+            },
+            success: function(data) {
+                $('.button').attr('disabled', false);
+                if (data.validate) {
+                    newRow = '<tr>';
+                    newRow += '<td>' + data.xval + '</td>';
+                    newRow += '<td>' + data.yval + '</td>';
+                    newRow += '<td>' + data.rval + '</td>';
+                    newRow += '<td>' + data.curtime + '</td>';
+                    newRow += '<td>' + data.exectime + '</td>';
+                    newRow += '<td>' + data.hitres + '</td>';
+                    $('#result-table').append(newRow);
+                }
+            }
+        });
+    });
+});
