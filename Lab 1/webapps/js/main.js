@@ -5,10 +5,10 @@ $(function() {
 
     function validateX() {
         if($('.x-radio').is(':checked')) {
-            $('.xbox-label').removeClass('box-error');
+            $('.box-label').removeClass('box-error');
             return true;
         } else {
-            $('.xbox-label').addClass('box-error');
+            $('.box-label').addClass('box-error');
             return false;
         }
     }
@@ -17,7 +17,7 @@ $(function() {
         const Y_MIN = -5;
         const Y_MAX = 5;
 
-        let yField = $('#y-textinput');
+        let yField = $('#y-text-input');
         let yNumber = yField.val().replace(',', '.');
 
         if (isNumeric(yNumber) && yNumber >= Y_MIN && yNumber <= Y_MAX) {
@@ -30,17 +30,17 @@ $(function() {
     }
 
     function validateR() {
-        if ($('.r-checkbox').is(':checked')) {
-            $('.rbox-label').removeClass('box-error') 
+        if ($('.r-radio').is(':checked')) {
+            $('.box-label').removeClass('box-error')
             return true;
         } else {
-            $('.rbox-label').addClass('box-error');
+            $('.box-label').addClass('box-error');
             return false;
         }
     }
 
     function validateForm() {
-        return validateX & validateY & validateR;
+        return validateX && validateY && validateR;
     }
 
     $('#input-form').on('submit', function(event) {
@@ -56,6 +56,7 @@ $(function() {
             },
             success: function(data) {
                 $('.button').attr('disabled', false);
+                let newRow;
                 if (data.validate) {
                     newRow = '<tr>';
                     newRow += '<td>' + data.xval + '</td>';
