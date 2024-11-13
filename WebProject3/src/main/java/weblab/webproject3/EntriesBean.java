@@ -12,20 +12,21 @@ import java.util.List;
 @Named("entries")
 @SessionScoped
 public class EntriesBean implements Serializable {
-    private static final String persistenceUnit = "StudsDS";
+    private static final String persistenceUnit = "StudsPU";
 
     private Entry entry;
     private List<Entry> entries;
 
     private EntityManagerFactory entityManagerFactory;
-    @PersistenceContext(unitName = "StudsDS")
     private EntityManager entityManager;
     private EntityTransaction transaction;
+
 
     public EntriesBean() {
         entry = new Entry();
         entries = new ArrayList<>();
         connect();
+        loadEntries();
     }
 
     private void connect() {
