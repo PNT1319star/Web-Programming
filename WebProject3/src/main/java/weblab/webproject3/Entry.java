@@ -20,15 +20,15 @@ public class Entry implements Serializable {
     }
 
     private boolean checkTriangle() {
-        return xVal <= 0 && yVal <= 0 && yVal >= (-xVal - (double) rVal / 2);
+        return xVal <= 0 && yVal <= 0 && yVal >= (-xVal - (double) rVal);
     }
 
     private boolean checkRectangle() {
-        return xVal >= 0 && xVal <= rVal && yVal >= (double) -rVal / 2;
+        return xVal >= 0 && xVal <= rVal / 2 && yVal >= (double) -rVal && yVal <= 0;
     }
 
     private boolean checkCircle() {
-        return xVal >= 0 && yVal >= 0 && xVal * xVal + yVal * yVal <= (double) rVal * rVal / 4;
+        return xVal <= 0 && yVal >= 0 && xVal * xVal + yVal * yVal <= (double) rVal * rVal / 4;
     }
 
     public void checkHit() {

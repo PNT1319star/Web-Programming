@@ -1,6 +1,6 @@
 $(function () {
-    const X_VALUES = [-4.0, -3.0, -2.0, -1.0, 0.0, 1.0, 2.0, 3.0, 4.0];
-    const Y_MIN = -5, Y_MAX = 3;
+    const X_VALUES = [-2.0, -1.5, -1.0, -0.5, 0.0, 0.5, 1.0, 1.5, 2.0];
+    const Y_MIN = -5, Y_MAX = 5;
     const R_VALUES = [1, 2, 3, 4, 5];
 
     let xVal;

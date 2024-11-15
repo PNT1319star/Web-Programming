@@ -1,5 +1,5 @@
 $(function () {
-    const DELAY = 7000;
+    const DELAY = 6000;
 
     function setDate(date) {
         let d = date.getDate();

@@ -4,21 +4,16 @@
              xsi:schemaLocation="https://jakarta.ee/xml/ns/persistence https://jakarta.ee/xml/ns/persistence/persistence_3_0.xsd"
              version="3.0">
 
-    <persistence-unit name="StudsPU" transaction-type="RESOURCE_LOCAL">
+    <persistence-unit name="StudsPU" transaction-type="JTA">
         <!-- Hibernate Provider -->
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
-
-        <!-- DataSource configuration -->
+        <jta-data-source>java:jboss/datasources/StudsDS</jta-data-source>
         <class>weblab.webproject3.Entry</class>
         <properties>
-            <!-- Database connection settings -->
-            <property name="jakarta.persistence.jdbc.driver" value="org.postgresql.Driver" />
-            <property name="jakarta.persistence.jdbc.url" value="jdbc:postgresql://localhost:5656/studs" />
-            <property name="jakarta.persistence.jdbc.user" value="s374807" />
-            <property name="jakarta.persistence.jdbc.password" value="9cs4jxVhIg4Vqi8D" />
-
-            <!-- Hibernate settings -->
+            <!-- Cấu hình Dialect của PostgreSQL -->
             <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect" />
+
+            <!-- JTA DataSource được quản lý bởi container -->
             <property name="hibernate.hbm2ddl.auto" value="update" />
             <property name="hibernate.show_sql" value="true" />
             <property name="hibernate.format_sql" value="true" />

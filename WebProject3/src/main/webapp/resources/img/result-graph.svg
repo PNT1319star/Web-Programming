@@ -35,11 +35,11 @@
     <text class="coordinate-text coordinate-text_plus-Ry" x="120" y="48" font-size="14">R</text>
 
     <!-- Triangle -->
-    <polygon class="svg-figure triangle-figure" points="76,110 110,110 110,143"
+    <polygon class="svg-figure triangle-figure" points="43,110 110,110 110,176"
              fill="blue" fill-opacity="0.25" stroke="darkblue" stroke-opacity="0.5" />
 
     <!-- Rectangle -->
-    <polygon class="svg-figure rectangle-figure" points="110,110 110,143 176,143 176,110"
+    <polygon class="svg-figure rectangle-figure" points="110,110 110,176 143,176 143,110"
              fill="green" fill-opacity="0.25" stroke="darkgreen" stroke-opacity="0.5" />
 
     <!-- Circle -->

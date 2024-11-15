@@ -1,23 +1,26 @@
 package weblab.webproject3;
 
+import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.faces.annotation.ManagedProperty;
 import jakarta.inject.Named;
 import jakarta.persistence.*;
-import jakarta.enterprise.context.SessionScoped;
 
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
 @Named("entries")
-@SessionScoped
+@ApplicationScoped
 public class EntriesBean implements Serializable {
     private static final String persistenceUnit = "StudsPU";
 
     private Entry entry;
     private List<Entry> entries;
 
+
     private EntityManagerFactory entityManagerFactory;
+
+    @PersistenceContext(unitName = "StudsPU")
     private EntityManager entityManager;
     private EntityTransaction transaction;
 
