@@ -6,7 +6,7 @@ import lombok.NonNull;
 @Data
 public class JwtDTO {
     @NonNull
-    private String userName;
+    private String username;
     @NonNull
     private String jwt;
 }

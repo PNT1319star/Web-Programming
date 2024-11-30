@@ -1,11 +1,12 @@
 package weblab.webproject4.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import javax.persistence.*;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
+
+import javax.persistence.*;
 
 @Data
 @NoArgsConstructor
@@ -38,18 +39,18 @@ public class Entry {
     }
 
     private boolean checkTriangle() {
-        return x <= 0 && y <= 0 && y >= (-x - r);
+        return x <= 0 && y >= 0 && y <= (2 * x + r);
     }
 
     private boolean checkRectangle() {
-        return x <= 0 && y >= 0 && x <= r && y >= -r;
+        return x <= 0 && y <= 0 && x >= -r && y >= -r;
     }
 
     private boolean checkCircle() {
-        return x >= 0 && y >= 0 && x * x + y * y <= r * r / 4;
+        return x >= 0 && y >= 0 && x * x + y * y <= r * r ;
     }
 
     public void checkResult() {
-        result = checkCircle() && checkRectangle() && checkTriangle();
+        result = checkCircle() || checkRectangle() || checkTriangle();
     }
 }
